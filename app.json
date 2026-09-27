@@ -1,0 +1,32 @@
+{
+ "app": "sidequest",
+ "name": "Sidequest",
+ "description": "What to play next: about 52,000 Steam games with ten or more reviews, searchable by what a player is in the mood for, by genre, length or 'games like' one they loved. Each game carries its community tags, a short description, review score and a playtime-based length, and links to its store page. Adult sexual content is excluded. Catalog data from FronkonGames' steam-games-dataset (MIT).",
+ "tags": ["games", "steam", "recommendations"],
+ "site": { "project": "sidequest", "account": "2e0a41ed3fec719d427dfae6512efddf" },
+ "types": {
+  "sidequest.game.v1": {
+   "description": "One game on Steam: what it is (its short description), what players tag it with, its genres, how long it plays (short, medium or long, from median playtime, where known), and how its reviews rate it.",
+   "role_map": {
+    "identity": "game_id",
+    "title": "title",
+    "subtitle": "developer",
+    "temporal": "released",
+    "media": "url",
+    "tags": ["tags", "genres", "length", "rating"],
+    "text": ["text"]
+   },
+   "presentation": {
+    "externalUrl": { "sidequest.game.v1": "{url}" },
+    "types": { "sidequest.game.v1": { "icon": "🎮", "singular": "Game", "plural": "Games" } },
+    "facets": ["tags", "genres", "length", "rating"]
+   }
+  }
+ },
+ "relations": [],
+ "sources": [
+  { "namespace": "games", "cwd": ".",
+    "command": ["python3", "sources/steam.py", "--output-dir", ".ship/stage/games"] }
+ ],
+ "fangorn": "fangorn"
+}

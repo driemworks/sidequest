@@ -1,0 +1,21 @@
+{"id":"mood-dark","q":"something gritty and atmospheric","expect":{"match":{"tags":"Atmospheric|Dark|Noir|Gore|Violent|Horror|Post-apocalyptic|Psychological"}},"min":0.6,"goal":"any-player"}
+{"id":"mood-relaxing","q":"a relaxing game to unwind after work","expect":{"match":{"tags":"Relaxing|Casual|Cozy|Wholesome|Cute"}},"min":0.6,"goal":"any-player"}
+{"id":"competitive-shooter","q":"competitive online shooter","expect":{"match":{"tags":"^(?=.*(FPS|Shooter))(?=.*(PvP|Competitive|Multiplayer))"}},"min":0.6,"goal":"any-player"}
+{"id":"grand-strategy","q":"deep grand strategy about empires","expect":{"match":{"tags":"Grand Strategy|4X|Strategy"}},"min":0.6,"goal":"any-player"}
+{"id":"racing-sim","q":"realistic racing simulator","expect":{"match":{"tags":"Racing|Driving|Automobile Sim"}},"min":0.6,"goal":"any-player"}
+{"id":"jrpg","q":"turn-based JRPG with a big story","expect":{"match":{"tags":"JRPG|Turn-Based|RPG"}},"min":0.6,"goal":"any-player"}
+{"id":"city-builder","q":"build and manage a city","expect":{"match":{"tags":"City Builder|Colony Sim|Management|Building"}},"min":0.6,"goal":"any-player"}
+{"id":"puzzle","q":"clever puzzle game that makes me think","expect":{"match":{"tags":"Puzzle|Logic"}},"min":0.6,"goal":"any-player"}
+{"id":"coop-partner","q":"cozy farming game to play with my partner","expect":{"match":{"tags":"^(?=.*Farming)(?=.*(Co-op|Multiplayer))"}},"min":0.4,"goal":"any-player"}
+{"id":"survival-crafting","q":"survive and craft in an open world with friends","expect":{"match":{"tags":"Survival|Crafting"}},"min":0.6,"goal":"any-player"}
+{"id":"rhythm","q":"music rhythm game","expect":{"match":{"tags":"Rhythm|Music"}},"min":0.6,"goal":"any-player"}
+{"id":"sports","q":"football or basketball sports game","expect":{"match":{"tags":"Sports|Football|Basketball|Soccer"}},"min":0.6,"goal":"any-player"}
+{"id":"weekend","q":"short game I can finish in a weekend","expect":{"where":{"length":"short"}},"min":0.4,"goal":"any-player"}
+{"id":"like-hollow-knight","q":"games like Hollow Knight","expect":{"where":{"tags":"Metroidvania"}},"min":0.6,"goal":"any-player"}
+{"id":"like-slay-the-spire","q":"games like Slay the Spire","expect":{"match":{"tags":"Deckbuilding|Card Battler"}},"min":0.6,"goal":"any-player"}
+{"id":"like-stardew","q":"games like Stardew Valley","expect":{"match":{"tags":"Farming Sim|Life Sim|Agriculture"}},"min":0.6,"goal":"any-player"}
+{"id":"tag-spread","kind":"coverage","field":"tags","values":["Action","Adventure","Strategy","RPG","Simulation","Puzzle","Racing","Sports","Horror","Platformer","Shooter","Survival","Roguelike","Metroidvania","City Builder","Visual Novel","Rhythm","Fighting","Stealth","Open World","Co-op","PvP","Relaxing","Story Rich","Sandbox","Tower Defense","Card Game","Point & Click","Turn-Based Strategy","Farming Sim"],"min":1,"goal":"any-player"}
+{"id":"years","kind":"coverage","field":"year","values":["2004","2007","2010","2013","2016","2019","2022","2025"],"min":1,"goal":"any-player"}
+{"id":"untagged","kind":"records","expect":{"not":{"match":{"tags":"."}}},"max_pct":2,"goal":"any-player"}
+{"id":"undescribed","kind":"records","expect":{"not":{"match":{"description":"\\w{3}"}}},"max_pct":2,"goal":"any-player"}
+{"id":"adult","kind":"records","expect":{"match":{"tags|notes|description":"Nudity|Sexual Content|NSFW|Hentai|\\bsex|\\bnud|porn|erotic"}},"max_pct":0,"hard":true,"goal":"safe-by-default"}
